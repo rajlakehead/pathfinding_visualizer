@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import { PathfindingProvider } from "./context/PathfindingContext";
 import { TileProvider } from "./context/TIleContext";
 import { SpeedProvider } from "./context/SpeedContext";
+import { Grid } from "./components/Grid";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -12,7 +13,9 @@ function App() {
     <PathfindingProvider>
       <TileProvider>
         <SpeedProvider>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+        <div className="h-screen w-screen flex flex-col">
+          <Grid />
+        </div>
         </SpeedProvider>
       </TileProvider>
     </PathfindingProvider>
