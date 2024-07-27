@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { PathfindingProvider } from "./context/PathfindingContext";
@@ -7,14 +7,13 @@ import { SpeedProvider } from "./context/SpeedContext";
 import { Grid } from "./components/Grid";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const isVisualizationRunningRef = useRef(false);
   return (
     <PathfindingProvider>
       <TileProvider>
         <SpeedProvider>
         <div className="h-screen w-screen flex flex-col">
-          <Grid />
+          <Grid isVisualizationRunningRef={isVisualizationRunningRef} />
         </div>
         </SpeedProvider>
       </TileProvider>
