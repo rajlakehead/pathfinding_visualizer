@@ -13,10 +13,12 @@ export const createWall = (
     setTimeout(() => {
       for (let col = 0; col < MAX_COLS; col++) {
         if (row % 2 === 0 || col % 2 === 0) {
+
           if (
             !isRowColEqual(row, col, startTile) &&
             !isRowColEqual(row, col, endTile)
           ) {
+
             setTimeout(() => {
               document.getElementById(
                 `${row}-${col}`

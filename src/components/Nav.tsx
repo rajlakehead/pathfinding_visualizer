@@ -10,7 +10,6 @@ import { runMazeAlgorithm } from "../utils/runMazeAlgorithm";
 
 export function Nav({isVisualizationRunningRef} : {isVisualizationRunningRef : MutableRefObject<boolean>}) {
     const [isDisabled, setIsDisabled] = useState(false);
-
     const {maze, setMaze, grid, setGrid, isGraphVisualized, setIsGraphVisualized} = usePathfinding();
     const { startTile, endTile} = useTile();
     const { speed, setSpeed } = useSpeed();
@@ -21,7 +20,7 @@ export function Nav({isVisualizationRunningRef} : {isVisualizationRunningRef : M
           resetGrid({ grid, startTile, endTile });
           return;
         }
-    
+        
         setMaze(maze);
         setIsDisabled(true);
         runMazeAlgorithm({
