@@ -1,6 +1,4 @@
-import { useRef, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useRef } from "react";
 import { PathfindingProvider } from "./context/PathfindingContext";
 import { TileProvider } from "./context/TIleContext";
 import { SpeedProvider } from "./context/SpeedContext";
@@ -13,11 +11,10 @@ function App() {
     <PathfindingProvider>
       <TileProvider>
         <SpeedProvider>
-        <div className="h-screen w-screen flex flex-col">
-        <Nav isVisualizationRunningRef={isVisualizationRunningRef} />
-
-          <Grid isVisualizationRunningRef={isVisualizationRunningRef} />
-        </div>
+          <div className="h-screen w-screen flex flex-col bg-[#131416]">
+            <Nav isVisualizationRunningRef={isVisualizationRunningRef} />
+            <Grid isVisualizationRunningRef={isVisualizationRunningRef} />
+          </div>
         </SpeedProvider>
       </TileProvider>
     </PathfindingProvider>
